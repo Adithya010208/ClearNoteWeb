@@ -1,20 +1,25 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ClearNote AI - Vercel Deployment Guide
 
-# Run and deploy your AI Studio app
+This application is fully compatible with Vercel. Follow these steps to deploy:
 
-This contains everything you need to run your app locally.
+## 1. Environment Variables
+You **must** add the following environment variable in your Vercel project settings:
 
-View your app in AI Studio: https://ai.studio/apps/c6e50fe1-f133-460e-a1e8-1c2190682db0
+- `GEMINI_API_KEY`: Your Google Gemini API Key.
 
-## Run Locally
+## 2. Firebase Configuration
+The application uses `firebase-applet-config.json` for its Firebase settings. Ensure this file is included in your repository or configured correctly.
 
-**Prerequisites:**  Node.js
+## 3. Deployment Settings
+Vercel should automatically detect the Vite configuration. If not, use these settings:
 
+- **Framework Preset**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Root Directory**: `./`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 4. SPA Routing
+A `vercel.json` file has been included to handle client-side routing by rewriting all requests to `index.html`.
+
+---
+*ClearNote AI • Secure Clinical Documentation System*
